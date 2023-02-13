@@ -1,25 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from "@react-navigation/native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
+import Inicio from "./components/Inicio";
+import Contatos from "./components/Contatos";
+import Produtos from "./components/Produtos";
+
+const Menu = createBottomTabNavigator().Navigator;
+const Itens = createBottomTabNavigator().Screen;
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.p}>Bom dia, Buenos dias, Good morning</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Menu>
+        <Itens name="Início" component={Inicio}/>
+        <Itens name="Contatos" component={Contatos}/>
+        <Itens name="Produtos" component={Produtos}/>
+      </Menu>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  p: {
-    fontSize: 20,
-    color: 'red',
-  }
-});
