@@ -1,6 +1,6 @@
 # Revisão
 
-- [ ] Dependencias 
+- [ x] Dependencias 
 - [ ] Criando pasta components
 - [ ] Estilos e Index
 - [ ] Importanto para o arquivo App.js
